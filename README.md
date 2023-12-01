@@ -39,16 +39,16 @@ In Dlib's 68 facial **landmark** detector, each of the 68 landmarks corresponds 
   - (64): right corner
   - (65, 67): bottom inner lip
 
-**Example**
-- before
-
-![](assets/face.png)
-
-- after
-  
+**The landmarks are shown in the image below**
 ![](assets/face.out.png)
 
-#### Features
-- Eye Aspect Ratio (EAR)
-- Mouth Aspect Ratio (MAR)
-- Distance between inner eyebrow corners
+Using these landmarks, we are able to compute different metrics that will help us classify the facial expressions. These metrics / features are:
+
+- Eye Aspect Ratio - The ratio of the width of the eye to the height of the eye. This metric is used to determine how wide open the eye is.
+- Mouth Aspect Ratio - Same measure as the eye aspect ratio, but computed for the mouth.
+- Distance between inner eyebrow corners - Could be used to determine how furrowed the eyebrows are.
+- Curvature of certain facial landmarks: This is a measure of how curved facial landmark is, we return a vector containing the area under the curve, the max curvature and the mean curvature for the following landmarks:
+  - Eyebrows
+  - Top and bottom inner lips
+
+- Distance between the corners of the mouth
