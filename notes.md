@@ -1,0 +1,1 @@
+The results from the predictions are fine until the data is trained with images in the directory from 9 and upwards

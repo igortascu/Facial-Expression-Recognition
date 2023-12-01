@@ -1,0 +1,6 @@
+Could not find face in image: assets/train/2/Sad.jpg
+Could not find face in image: assets/train/18/Surprised.jpg
+Could not find face in image: assets/train/18/Anger.jpg
+Could not find face in image: assets/train/2/Sad.jpg
+Could not find face in image: assets/train/18/Surprised.jpg
+Could not find face in image: assets/train/18/Anger.jpg
