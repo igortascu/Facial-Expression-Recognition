@@ -25,13 +25,13 @@ validation_data = os.listdir("assets/predict")
 validation_data = list(map(lambda x: int(x), validation_data))
 validation_data.sort()
 
-for dir_id in validation_data:
+for dir_id in [validation_data[18]]:
     image_paths = os.listdir("assets/predict/" + str(dir_id))
     image_labels_and_paths = []
 
     for image_path in image_paths:
         for label in all_class_labels:
-            if label in image_path:
+            if label.lower() in image_path.lower():
                 image_labels_and_paths.append((label, "assets/predict/" + str(dir_id) + "/" + image_path))
                 
     for (label, path) in image_labels_and_paths:

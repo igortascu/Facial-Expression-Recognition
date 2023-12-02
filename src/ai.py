@@ -51,7 +51,8 @@ def format_landmarks(landmarks):
         'inner_lips': extract(landmarks, 60, 68),
         'inner_upper_lip': extract(landmarks, 60, 65),
         'inner_lower_lip': extract(landmarks, 64, 68) + extract(landmarks, 60, 60 + 1), # 60 is the left corner of the inner lip
-
+        'outer_upper_lip': extract(landmarks, 48, 55),
+        'outer_lower_lip': extract(landmarks, 54, 60) + extract(landmarks, 48, 48 + 1), # 60 is the left corner of the inner lip
     }
 
 # Compute the eye aspect ratio
@@ -91,18 +92,32 @@ def curve_vectors(curved):
     # Calculate the curvature
     # formula shows the curvature of a parametric curve
     curvature = (dx * d2y - dy * d2x) / np.power(dx**2 + dy**2, 3/2)
-    
+
+    # Angular change calculation
+    angles = np.arctan2(dy, dx)
+    angular_change = np.diff(angles)
+    mean_angular_change = np.mean(angular_change)
+
     # Calculate the maximum curvature
-    max_curvature = np.max(np.abs(curvature))
+    max_curvature = np.max(curvature)
 
     # Calculate the mean curvature
-    mean_curvature = np.mean(np.abs(curvature))
+    mean_curvature = np.mean(curvature)
 
     # Calculate the area under the curvature curve (integral)
-    area_under_curve = np.trapz(np.abs(curvature), u_new)
+    area_under_curve = np.trapz(curvature, u_new)
 
     ## Could add the distance between the highest and the line connecting the two ends of the eyebrow
-    return [area_under_curve, max_curvature, mean_curvature]
+    vectors = [mean_angular_change, area_under_curve, max_curvature, mean_curvature]
+
+    return vectors
+
+def calculate_tilt_angle(p1, p2):
+    # Calculate the angle relative to the horizontal line
+    deltaY = p2.y - p1.y
+    deltaX = p2.x - p1.x
+    angle = np.arctan2(deltaY, deltaX)  # in radians
+    return np.degrees(angle)  # convert to degrees
 
 def mouth_aspect_ratio(mouth):
     # Compute the ratio between the width and the height of the mouth
@@ -147,11 +162,14 @@ def get_feature_vector(landmarks):
     right_eyebrow_curve_vectors = curve_vectors(landmarks['right_eyebrow'])
     feature_vector.extend(right_eyebrow_curve_vectors)
 
-    distance_between_eyebrows = euclidean_distance(landmarks['left_eyebrow'][4], landmarks['right_eyebrow'][0])
-    feature_vector.append(distance_between_eyebrows)
+    face_width = euclidean_distance(landmarks['jaw'][0], landmarks['jaw'][16])
+    eyebrow_distance = euclidean_distance(landmarks['left_eyebrow'][4], landmarks['right_eyebrow'][0])
+    normalized_eyebrow_distance = eyebrow_distance / face_width
+    feature_vector.append(normalized_eyebrow_distance)
 
     mouth_corner_distance = euclidean_distance(landmarks['outer_lips'][0], landmarks['outer_lips'][6])
-    feature_vector.append(mouth_corner_distance)
+    normalized_mouth_corner_distance = mouth_corner_distance / face_width
+    feature_vector.append(normalized_mouth_corner_distance)
 
     inner_lips_aspect_ratio = mouth_aspect_ratio(landmarks['inner_lips'])
     feature_vector.append(inner_lips_aspect_ratio)
@@ -161,5 +179,22 @@ def get_feature_vector(landmarks):
 
     inner_lower_lip_curve_vectors = curve_vectors(landmarks['inner_lower_lip'])
     feature_vector.extend(inner_lower_lip_curve_vectors)
+
+    outer_upper_lip_curve_vectors = curve_vectors(landmarks['outer_upper_lip'])
+    feature_vector.extend(outer_upper_lip_curve_vectors)
+
+    outer_lower_lip_curve_vectors = curve_vectors(landmarks['outer_lower_lip'])
+    feature_vector.extend(outer_lower_lip_curve_vectors)
+    
+    jaw_curve_vectors = curve_vectors(landmarks['jaw'])
+    feature_vector.extend(jaw_curve_vectors)
+
+    face_tilt_angle_using_jaw = calculate_tilt_angle(landmarks['jaw'][0], landmarks['jaw'][16])
+    face_tilt_angle_using_eyes = calculate_tilt_angle(landmarks['left_eye'][3], landmarks['right_eye'][0])
+    avg_face_tilt_angle = (face_tilt_angle_using_jaw + face_tilt_angle_using_eyes) / 2
+    feature_vector.append(avg_face_tilt_angle)
+
+    nose_bridge_tilt_angle = calculate_tilt_angle(landmarks['nost_bridge'][0], landmarks['nost_bridge'][3])
+    feature_vector.append(nose_bridge_tilt_angle)
 
     return feature_vector

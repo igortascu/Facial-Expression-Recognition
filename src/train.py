@@ -7,6 +7,7 @@ from sklearn.naive_bayes import GaussianNB
 import joblib
 from ai import euclidean_distance, eye_aspect_ratio, image_to_landmarks, format_landmarks, get_feature_vector, get_bayes_classifier, store_bayes_classifier
 from helpers import load_image, highlight_landmarks, all_class_labels
+from more_itertools import chunked
 
 def train_bayes_classifier(classifier, image_labels_and_paths):
     class_labels = []
@@ -37,22 +38,22 @@ def train_bayes_classifier(classifier, image_labels_and_paths):
     classifier.partial_fit(feature_vectors, class_labels, classes=all_class_labels)
     store_bayes_classifier(classifier)
 
-training_data = os.listdir("assets/train")
-training_data = list(map(lambda x: int(x), training_data))
-training_data.sort()
-
 classifier = get_bayes_classifier()
+training_data2 = os.listdir("assets/train2")
 
-for image_id in training_data:
-    emotions = os.listdir("assets/train/" + str(image_id))
-    image_labels_and_paths = []
+store = []
 
-    for emotion in emotions:
-        for label in all_class_labels:
-            if label in emotion:
-                image_labels_and_paths.append((label, "assets/train/" + str(image_id) + "/" + emotion))
-                
-    print(image_labels_and_paths)
-    train_bayes_classifier(classifier, image_labels_and_paths)
+for emotion_label in all_class_labels:
+    image_paths = os.listdir("assets/train2/" + emotion_label)
+    image_paths_with_labels = map(lambda filename: (emotion_label, f"assets/train2/{emotion_label}/{filename}"), image_paths)
+    chunks = iter(list(chunked(image_paths_with_labels, 10)))
+    store.append(chunks)
 
-store_bayes_classifier(classifier)
+while len(store) > 0:
+    for i in range(0, len(store)):
+        chunk = next(store[i])
+        if chunk:
+            print("Training chunk...", chunk)
+            train_bayes_classifier(classifier, chunk)
+
+# store_bayes_classifier(classifier)
