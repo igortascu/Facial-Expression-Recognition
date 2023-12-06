@@ -6,3 +6,6 @@ scipy
 joblib
 pathlib
 more-itertools
+deepface
+tensorflow
+Pillow

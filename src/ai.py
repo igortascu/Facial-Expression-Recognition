@@ -4,7 +4,7 @@ import numpy as np
 from scipy.interpolate import splprep, splev
 from sklearn.naive_bayes import GaussianNB
 import joblib
-from helpers import all_class_labels
+from helpers import all_class_labels, load_image
 
 class Point:
     def __init__(self, x, y):
@@ -19,10 +19,12 @@ def euclidean_distance(p1: Point, p2: Point):
     return np.sqrt(dx**2 + dy**2)
 
 
-def image_to_landmarks(image):
+def get_dlib_utils():
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor('models/shape_predictor_68_face_landmarks.dat')
+    return detector, predictor
 
+def image_to_landmarks(image, detector, predictor):
     # Detect faces
     faces = detector(image)
 
@@ -75,42 +77,51 @@ def eye_aspect_ratio(eye):
 
 # Determine the signature of the given points of a curved line
 def curve_vectors(curved):
-    # `points` is an array of x and y coordinates of the eyebrow points
-    points = np.array([[p.x, p.y] for p in curved])
+    try:
+        # `points` is an array of x and y coordinates of the eyebrow points
+        points = np.array([[p.x, p.y] for p in curved])
 
-    # Fit a B-spline to the points
-    tck, u = splprep([points[:,0], points[:,1]], s=0, k=4)
-    u_new = np.linspace(u.min(), u.max(), 1000)
-    # x_new, y_new = splev(u_new, tck, der=0) # for visualization where x_new and y_new are arrays of x and y coordinates of the spline
+        # Fit a B-spline to the points
+        tck, u = splprep([points[:,0], points[:,1]], s=0, k=4)
+        u_new = np.linspace(u.min(), u.max(), 1000)
+        # x_new, y_new = splev(u_new, tck, der=0) # for visualization where x_new and y_new are arrays of x and y coordinates of the spline
 
-    # Calculate the first derivatives
-    dx, dy = splev(u_new, tck, der=1)
+        # Calculate the first derivatives
+        dx, dy = splev(u_new, tck, der=1)
 
-    # Calculate the second derivatives
-    d2x, d2y = splev(u_new, tck, der=2)
+        # Calculate the second derivatives
+        d2x, d2y = splev(u_new, tck, der=2)
 
-    # Calculate the curvature
-    # formula shows the curvature of a parametric curve
-    curvature = (dx * d2y - dy * d2x) / np.power(dx**2 + dy**2, 3/2)
+        # Calculate the curvature
+        # formula shows the curvature of a parametric curve
+        curvature = (dx * d2y - dy * d2x) / np.power(dx**2 + dy**2, 3/2)
 
-    # Angular change calculation
-    angles = np.arctan2(dy, dx)
-    angular_change = np.diff(angles)
-    mean_angular_change = np.mean(angular_change)
+        # Angular change calculation
+        angles = np.arctan2(dy, dx)
+        angular_change = np.diff(angles)
+        mean_angular_change = np.mean(angular_change)
 
-    # Calculate the maximum curvature
-    max_curvature = np.max(curvature)
+        # Calculate the maximum curvature
+        max_curvature = np.max(np.abs(curvature))
 
-    # Calculate the mean curvature
-    mean_curvature = np.mean(curvature)
+        # Calculate the mean curvature
+        mean_curvature = np.mean(np.abs(curvature))
 
-    # Calculate the area under the curvature curve (integral)
-    area_under_curve = np.trapz(curvature, u_new)
+        # Calculate the area under the curvature curve (integral)
+        area_under_curve = np.trapz(np.abs(curvature), u_new)
 
-    ## Could add the distance between the highest and the line connecting the two ends of the eyebrow
-    vectors = [mean_angular_change, area_under_curve, max_curvature, mean_curvature]
+        ## Could add the distance between the highest and the line connecting the two ends of the eyebrow
+        vectors = [mean_angular_change, area_under_curve, max_curvature, mean_curvature]
 
-    return vectors
+        return vectors
+
+    except Exception as e:
+        if curved:
+            print("failed for curve: ", list(map(lambda x: (x.x, x.y), curved)))
+        else:
+            print("failed for curve: ", curved)
+        raise e
+
 
 def calculate_tilt_angle(p1, p2):
     # Calculate the angle relative to the horizontal line
@@ -143,8 +154,16 @@ def get_bayes_classifier():
 
     return classifier
 
-def store_bayes_classifier(classifier):
-    joblib.dump(classifier, 'models/naive_bayes_classifier.pkl')
+def load_model(model_path, new_model = None):
+    try:
+        model = joblib.load(model_path)
+        return model
+    except FileNotFoundError:
+        return new_model
+    
+
+def save_model(classifier, model_path):
+    joblib.dump(classifier, model_path)
 
 def get_feature_vector(landmarks):
     landmarks = format_landmarks(landmarks)
@@ -198,3 +217,39 @@ def get_feature_vector(landmarks):
     feature_vector.append(nose_bridge_tilt_angle)
 
     return feature_vector
+
+# Converts the images to feature vectors and classification labels
+# Returns a tuple of (feature_vectors, classification_labels)
+def process_images(image_labels_and_paths, detector, predictor):
+    feature_vectors = []
+    classification_labels = []
+
+    for (label, path) in image_labels_and_paths:
+        image = load_image(path)
+        if image is None:
+            print('Could not open or find the image: ');
+            with open("error.txt", "a") as f:
+                f.write('Could not open or find the image: ' + path + "\n")
+            continue
+
+        landmarks = image_to_landmarks(image, detector, predictor)
+
+        if landmarks is None:
+            print("Could not find face in image: " + path)
+            with open("error.txt", "a") as f:
+                f.write("Could not find face in image: " + path + "\n")
+            with open("delete.txt", "a") as f:
+                f.write(path + "\n")
+            continue
+        
+        try:
+            feature_vector = get_feature_vector(landmarks)
+            feature_vectors.append(feature_vector)
+            classification_labels.append(label)
+        except Exception as e:
+            print("Could not retrieve feature vectors: " + path)
+            with open("error.txt", "a") as f:
+                f.write("Could not retrieve feature vectors: " + path + "\n")
+            continue
+
+    return (feature_vectors, classification_labels)
