@@ -39,30 +39,32 @@ def highlight_landmarks(image, landmarks):
         cv2.putText(image, str(i), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0, 0, 255), 1)
 
 def load_image(path, target_size = None, grayscale = False, bgr = False, normalize = False):
-     # Load image using Pillow
+    # Load image using Pillow
     pil_image = Image.open(path)
-    
+
     if target_size:
         # Resize image
-        img = img.resize(target_size)
+        pil_image = pil_image.resize(target_size)
 
+    print("grayscale", grayscale)
     if grayscale:
         # Convert to grayscale
-        img = img.convert('L')
+        pil_image = pil_image.convert('L')
 
     # Convert PIL image to RGB (if not already in this format)
-    img = pil_image.convert('RGB')
-    img = np.array(img)
+    # This step should be after resizing and grayscale conversion
+    pil_image = pil_image.convert('RGB')
+    img = np.array(pil_image)
 
     if normalize:
-        # Convert image to NumPy array and normalize
+        # Normalize the image
         img = img / 255.0
 
     # Convert RGB to BGR for dlib (because dlib uses BGR)
     if bgr:
         img = img[:, :, ::-1]
 
-    return  img
+    return img
 
 # Loads the label and full path for each image in the dataset
 #

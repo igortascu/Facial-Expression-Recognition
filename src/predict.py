@@ -67,14 +67,11 @@ def predict_with_cnn(feature_vectors, version = None, model = None):
         path = get_model_path("cnn", version)
         model = load_keras_model(path)
 
-    predictions = model.predict(feature_vectors)
-    decoded_indices = np.argmax(predictions, axis=1)
-    predicted_labels = map(lambda x: all_class_labels[x], decoded_indices)
+    if isinstance(feature_vectors, list):
+        feature_vectors = np.array(feature_vectors)
 
-    # label_encoder = load_model("models/cnn_label_encoder.pkl")
-    # predicted_labels = label_encoder.inverse_transform(predicted_indices)
-
-    return predicted_labels
+    encoded_labels = model.predict(feature_vectors)
+    return decode_labels_for_cnn(encoded_labels)
 
 def print_accuracy(name, expected_list, predicted_list):
     print("Classification report for " + name + ": ")
@@ -99,7 +96,12 @@ if model != "cnn":
             print_accuracy(model_name, labels, predictions)
 
 elif model == "cnn":
-    labels, images, landmarks_list = load_dataset(dataset_path, target_size=cnn_image_size, grayscale=cnn_is_greyscale)
+    labels, images, landmarks_list = load_dataset(
+        dataset_path, 
+        target_size=cnn_image_size, 
+        grayscale=cnn_is_greyscale,
+        get_landmarks=False
+    )
     images = np.array(images)
 
     predictions = predict_with_cnn(images)

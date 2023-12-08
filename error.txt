@@ -659,3 +659,697 @@ Could not open or find the image: assets/train/Neutral/Neutral copy 8.jpg
 Could not extract landmarks from image: assets/train/Anger/Anger.jpg
 Could not extract landmarks from image: assets/train/Sad/Sad copy 16.jpg
 Could not extract landmarks from image: assets/train/Surprised/Surprised copy 18.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 16.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 17.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 16.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 14.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 15.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 11.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 10.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 12.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 13.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 9.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 3.jpg
+Could not open or find the image: assets/train1/Anger/Anger.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 2.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 6.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 7.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 5.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 8.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 9.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 15.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 14.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 16.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 17.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 13.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 12.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 10.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 11.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 18.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 5.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 7.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 6.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 2.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 9.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 8.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 5.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 4.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 6.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 7.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 2.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 10.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 11.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 13.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 12.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 16.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 17.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 15.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 7.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 15.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 6.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 4.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 16.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 17.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 5.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 13.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 12.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 2.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 10.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 11.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 3.jpg
+Could not open or find the image: assets/train1/Fear/Fear.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy.jpg
+Could not open or find the image: assets/train1/Fear/Fear-1.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 8.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 9.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 11.jpg
+Could not open or find the image: assets/train1/Happy/Happy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 10.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 12.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 2.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 3.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 13.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 17.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 7.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 6.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 16.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 14.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 4.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 5.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 15.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 18.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 8.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 10.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 11.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 3.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 13.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 12.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 2.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 6.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 16.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 17.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 7.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 5.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 15.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 14.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 4.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 18.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 17.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 16.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 14.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 15.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 11.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 10.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 12.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 13.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 9.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 3.jpg
+Could not open or find the image: assets/train1/Anger/Anger.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 2.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 6.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 7.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 5.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 8.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 9.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 15.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 14.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 16.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 17.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 13.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 12.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 10.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 11.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 18.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 5.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 7.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 6.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 2.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 9.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 8.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 5.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 4.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 6.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 7.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 2.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 10.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 11.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 13.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 12.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 16.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 17.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 15.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 7.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 15.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 6.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 4.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 16.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 17.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 5.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 13.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 12.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 2.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 10.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 11.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 3.jpg
+Could not open or find the image: assets/train1/Fear/Fear.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy.jpg
+Could not open or find the image: assets/train1/Fear/Fear-1.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 8.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 9.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 11.jpg
+Could not open or find the image: assets/train1/Happy/Happy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 10.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 12.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 2.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 3.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 13.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 17.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 7.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 6.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 16.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 14.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 4.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 5.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 15.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 18.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 8.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 10.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 11.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 3.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 13.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 12.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 2.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 6.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 16.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 17.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 7.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 5.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 15.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 14.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 4.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 18.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 17.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 16.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 14.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 15.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 11.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 10.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 12.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 13.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 9.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 3.jpg
+Could not open or find the image: assets/train1/Anger/Anger.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 2.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 6.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 7.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 5.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 8.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 9.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 15.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 14.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 16.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 17.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 13.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 12.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 10.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 11.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 18.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 5.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 7.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 6.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 2.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 9.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 8.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 5.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 4.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 6.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 7.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 2.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 10.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 11.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 13.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 12.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 16.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 17.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 15.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 7.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 15.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 6.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 4.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 16.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 17.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 5.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 13.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 12.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 2.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 10.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 11.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 3.jpg
+Could not open or find the image: assets/train1/Fear/Fear.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy.jpg
+Could not open or find the image: assets/train1/Fear/Fear-1.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 8.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 9.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 11.jpg
+Could not open or find the image: assets/train1/Happy/Happy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 10.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 12.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 2.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 3.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 13.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 17.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 7.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 6.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 16.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 14.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 4.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 5.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 15.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 18.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 8.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 10.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 11.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 3.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 13.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 12.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 2.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 6.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 16.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 17.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 7.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 5.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 15.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 14.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 4.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 18.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 17.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 16.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 14.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 15.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 11.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 10.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 12.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 13.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 9.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 3.jpg
+Could not open or find the image: assets/train1/Anger/Anger.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 2.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 6.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 7.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 5.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 8.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 9.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 15.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 14.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 16.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 17.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 13.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 12.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 10.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 11.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 18.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 5.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 7.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 6.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 2.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 9.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 8.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 5.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 4.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 6.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 7.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 2.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 10.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 11.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 13.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 12.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 16.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 17.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 15.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 7.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 15.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 6.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 4.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 16.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 17.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 5.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 13.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 12.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 2.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 10.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 11.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 3.jpg
+Could not open or find the image: assets/train1/Fear/Fear.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy.jpg
+Could not open or find the image: assets/train1/Fear/Fear-1.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 8.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 9.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 11.jpg
+Could not open or find the image: assets/train1/Happy/Happy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 10.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 12.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 2.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 3.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 13.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 17.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 7.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 6.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 16.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 14.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 4.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 5.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 15.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 18.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 8.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 10.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 11.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 3.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 13.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 12.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 2.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 6.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 16.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 17.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 7.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 5.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 15.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 14.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 4.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 18.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 17.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 16.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 14.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 15.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 11.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 10.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 12.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 13.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 9.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 8.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 3.jpg
+Could not open or find the image: assets/train1/Anger/Anger.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 2.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 6.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 7.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 5.jpg
+Could not open or find the image: assets/train1/Anger/Anger copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 8.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 9.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 15.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 14.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 16.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 17.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 13.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 12.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 10.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 11.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 18.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 4.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 5.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 7.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 6.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 2.jpg
+Could not open or find the image: assets/train1/Sad/Sad copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 9.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 8.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 5.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 4.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 6.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 7.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 3.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 2.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 10.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 11.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 13.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 12.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 16.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 17.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 15.jpg
+Could not open or find the image: assets/train1/Surprised/Surprised copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 7.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 15.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 14.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 6.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 4.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 16.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 17.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 5.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 13.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 12.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 2.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 10.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 11.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 3.jpg
+Could not open or find the image: assets/train1/Fear/Fear.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy.jpg
+Could not open or find the image: assets/train1/Fear/Fear-1.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 8.jpg
+Could not open or find the image: assets/train1/Fear/Fear copy 9.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 11.jpg
+Could not open or find the image: assets/train1/Happy/Happy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 10.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 12.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 2.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 3.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 13.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 17.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 7.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 6.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 16.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 14.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 4.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 5.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 15.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 18.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 8.jpg
+Could not open or find the image: assets/train1/Happy/Happy copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 10.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 11.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 3.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 13.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 12.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 2.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 6.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 16.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 17.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 7.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 5.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 15.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 14.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 4.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 9.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 18.jpg
+Could not open or find the image: assets/train1/Neutral/Neutral copy 8.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 17.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 16.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 14.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 15.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 11.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 10.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 12.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 13.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 9.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 8.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 3.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 2.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 6.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 7.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 5.jpg
+Could not extract landmarks from image: assets/train1/Anger/Anger copy 4.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 8.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 9.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 15.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 14.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 16.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 17.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 13.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 12.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 10.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 11.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 18.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 4.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 5.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 7.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 6.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 2.jpg
+Could not extract landmarks from image: assets/train1/Sad/Sad copy 3.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 18.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 9.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 8.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 5.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 4.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 6.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 7.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 3.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 2.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 10.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 11.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 13.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 12.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 16.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 17.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 15.jpg
+Could not extract landmarks from image: assets/train1/Surprised/Surprised copy 14.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 7.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 15.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 14.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 6.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 4.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 16.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 17.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 5.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 13.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 12.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 2.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 10.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 11.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 3.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear-1.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 8.jpg
+Could not extract landmarks from image: assets/train1/Fear/Fear copy 9.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 11.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 10.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 12.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 2.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 3.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 13.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 17.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 7.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 6.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 16.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 14.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 4.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 5.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 15.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 18.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 8.jpg
+Could not extract landmarks from image: assets/train1/Happy/Happy copy 9.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 10.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 11.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 3.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 13.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 12.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 2.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 6.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 16.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 17.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 7.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 5.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 15.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 14.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 4.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 9.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 18.jpg
+Could not extract landmarks from image: assets/train1/Neutral/Neutral copy 8.jpg
+Could not extract landmarks from image: assets/predict/Anger/Anger90.jpeg
+Could not extract landmarks from image: assets/predict/Sad/Sadness.png
+Could not extract landmarks from image: assets/predict/Surprised/surprised43.jpeg
+Could not extract landmarks from image: assets/predict/Surprised/Surprised1.jpeg
+Could not extract landmarks from image: assets/predict/Surprised/surprised2.jpeg
+Could not extract landmarks from image: assets/predict/Surprised/surprised.jpeg
+Could not extract landmarks from image: assets/predict/Fear/Fear23.jpeg
+Could not extract landmarks from image: assets/predict/Fear/Fear.png
+Could not extract landmarks from image: assets/predict/Fear/Fear2.jpeg
+Could not extract landmarks from image: assets/predict/Happy/Happy1.jpeg
+Could not extract landmarks from image: assets/predict/Happy/Happy2.jpeg
+Could not extract landmarks from image: assets/predict/Happy/Happy.jpeg
+Could not extract landmarks from image: assets/predict/Neutral/Neutral.png

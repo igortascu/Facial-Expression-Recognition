@@ -79,21 +79,17 @@ def train_cnn_on_features(feature_vectors, class_labels, classifier = None):
 
     return model
 
-def train_cnn_on_images(feature_vectors, class_labels, size, classifier = None):
+def train_cnn_on_images(feature_vectors, class_labels, size, is_grayscale=False, classifier = None):
+    print("is_grayscale", is_grayscale)
 
-    if classifier is None:
-        try:
-            classifier = load_keras_model(cnn_model_path)
-        except:
-            # Example CNN architecture
-            classifier = Sequential([
-                Conv2D(32, (3, 3), activation='relu', input_shape=(size[0], size[1], 1 if cnn_is_greyscale else 3)),
-                MaxPooling2D((2, 2)),
-                Flatten(),
-                Dense(64, activation='relu'),
-                Dropout(0.5),
-                Dense(len(all_class_labels), activation='softmax')
-            ])
+    classifier = Sequential([
+        Conv2D(32, (3, 3), activation='relu', input_shape=(size[0], size[1], 3)),
+        MaxPooling2D((2, 2)),
+        Flatten(),
+        Dense(64, activation='relu'),
+        Dropout(0.5),
+        Dense(len(all_class_labels), activation='softmax')
+    ])
 
     classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
@@ -144,7 +140,12 @@ if model != "cnn":
                 save_model(model_logic, f"models/{model_name}.pkl")
 
 elif model == "cnn":
-    labels, images, landmarks_list = load_dataset(training_dir_path)
-    images = np.array(images)
+    labels, images, landmarks_list = load_dataset(
+        training_dir_path, 
+        target_size=cnn_image_size, 
+        grayscale=cnn_is_greyscale, 
+        get_landmarks=False
+    )
 
-    train_cnn_on_images(images, labels, cnn_image_size)
+    images = np.array(images)
+    train_cnn_on_images(images, labels, cnn_image_size, is_grayscale=cnn_is_greyscale)

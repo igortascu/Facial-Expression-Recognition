@@ -245,8 +245,12 @@ def get_feature_vector(landmarks):
 # Inputs:
 #   path: The path to the dataset
 #   limit: The maximum number of images to load from each class
-def load_dataset(path, limit = 0, target_size = None, grayscale = False, cache = True, bgr = False):
-    cache_path = f".cache/{os.path.basename(path)}.cache"
+def load_dataset(path, limit = 0, target_size = None, grayscale = False, cache = True, bgr = False, get_landmarks = True):
+    if target_size == None:
+        cache_path = f".cache/{os.path.basename(path)}.cache"
+    else:
+        cache_path = f".cache/{os.path.basename(path)}-{target_size[0]}-{target_size[1]}.cache"
+
     try:
         dataset = joblib.load(cache_path)
     except:
@@ -265,24 +269,27 @@ def load_dataset(path, limit = 0, target_size = None, grayscale = False, cache =
                 with open("error.txt", "a") as f:
                     f.write('Could not open or find the image: ' + path + "\n")
                 continue
+            
+            if get_landmarks:
+                try:
+                    landmarks = image_to_landmarks(image, detector, predictor)
 
-            try:
-                landmarks = image_to_landmarks(image, detector, predictor)
-
-                if landmarks is None:
-                    raise Exception("Could not find face in image: " + path)
-                   
-            except:
-                print("Could not extract landmarks from image: " + path)
-                with open("error.txt", "a") as f:
-                    f.write("Could not extract landmarks from image: " + path + "\n")
-                with open("delete.txt", "a") as f:
-                    f.write(path + "\n")
-                continue
+                    if landmarks is None:
+                        raise Exception("Could not find face in image: " + path)
+                    
+                except:
+                    print("Could not extract landmarks from image: " + path)
+                    with open("error.txt", "a") as f:
+                        f.write("Could not extract landmarks from image: " + path + "\n")
+                    with open("delete.txt", "a") as f:
+                        f.write(path + "\n")
+                    continue
 
             labels.append(label)
             images.append(image)
-            landmarks_list.append(landmarks)
+            
+            if get_landmarks:
+                landmarks_list.append(landmarks)
         
         dataset = (labels, images, landmarks_list)
 
@@ -306,5 +313,5 @@ def encode_labels_for_cnn(labels):
 
 def decode_labels_for_cnn(encoded_labels):
     decoded_indices = np.argmax(encoded_labels, axis=1)
-    labels = map(lambda x: all_class_labels[x], decoded_indices)
+    labels = list(map(lambda x: all_class_labels[x], decoded_indices))
     return labels
