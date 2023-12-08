@@ -82,44 +82,20 @@ def eye_aspect_ratio(eye):
 # Determine the signature of the given points of a curved line
 def curve_vectors(curved):
     try:
-        # `points` is an array of x and y coordinates of the eyebrow points
+        # `points` is an array of x and y coordinates of the curve points
         points = np.array([[p.x, p.y] for p in curved])
 
-        # Fit a B-spline to the points
-        tck, u = splprep([points[:,0], points[:,1]], s=0, k=4)
-        u_new = np.linspace(u.min(), u.max(), 1000)
-        # x_new, y_new = splev(u_new, tck, der=0) # for visualization where x_new and y_new are arrays of x and y coordinates of the spline
+        # Calculate the differences between consecutive points
+        deltas = np.diff(points, axis=0)
 
-        # Calculate the first derivatives
-        dx, dy = splev(u_new, tck, der=1)
+        # Calculate the angles between consecutive points using the differences
+        angles = np.arctan2(deltas[:, 1], deltas[:, 0])
 
-        # Calculate the second derivatives
-        d2x, d2y = splev(u_new, tck, der=2)
+        # Calculate the angular changes between consecutive angles
+        # The result will have one less element since it's the difference between consecutive angles
+        angular_changes = np.diff(angles)
 
-        # Calculate the curvature
-        # formula shows the curvature of a parametric curve
-        curvature = (dx * d2y - dy * d2x) / np.power(dx**2 + dy**2, 3/2)
-
-        # Angular change calculation
-        angles = np.arctan2(dy, dx)
-        angular_change = np.diff(angles)
-        mean_angular_change = np.mean(angular_change)
-
-        # Calculate the maximum curvature
-        max_curvature = np.max(np.abs(curvature))
-
-        # Calculate the mean curvature
-        mean_curvature = np.mean(np.abs(curvature))
-
-        # Calculate the area under the curvature curve (integral)
-        area_under_curve = np.trapz(np.abs(curvature), u_new)
-
-        ## Could add the distance between the highest and the line connecting the two ends of the eyebrow
-        vectors = [mean_angular_change, area_under_curve, max_curvature, mean_curvature]
-
-        vectors.extend(curvature)
-
-        return vectors
+        return angular_changes
 
     except Exception as e:
         if curved:
@@ -185,33 +161,32 @@ def get_feature_vector(landmarks):
     landmarks = format_landmarks(landmarks)
     feature_vector = []
 
-    # basic features
     left_eye_aspect_ratio = eye_aspect_ratio(landmarks['left_eye'])
     feature_vector.append(left_eye_aspect_ratio)
 
     right_eye_aspect_ratio = eye_aspect_ratio(landmarks['right_eye'])
     feature_vector.append(right_eye_aspect_ratio)
 
-    # face_width = euclidean_distance(landmarks['jaw'][0], landmarks['jaw'][16])
-    # eyebrow_distance = euclidean_distance(landmarks['left_eyebrow'][4], landmarks['right_eyebrow'][0])
-    # normalized_eyebrow_distance = eyebrow_distance / face_width
-    # feature_vector.append(normalized_eyebrow_distance)
+    face_width = euclidean_distance(landmarks['jaw'][0], landmarks['jaw'][16])
+    eyebrow_distance = euclidean_distance(landmarks['left_eyebrow'][4], landmarks['right_eyebrow'][0])
+    normalized_eyebrow_distance = eyebrow_distance / face_width
+    feature_vector.append(normalized_eyebrow_distance)
 
-    # left_eyebrow_curve_vectors = curve_vectors(landmarks['left_eyebrow'])
-    # feature_vector.extend(left_eyebrow_curve_vectors)
+    left_eyebrow_curve_vectors = curve_vectors(landmarks['left_eyebrow'])
+    feature_vector.extend(left_eyebrow_curve_vectors)
 
-    # right_eyebrow_curve_vectors = curve_vectors(landmarks['right_eyebrow'])
-    # feature_vector.extend(right_eyebrow_curve_vectors)
+    right_eyebrow_curve_vectors = curve_vectors(landmarks['right_eyebrow'])
+    feature_vector.extend(right_eyebrow_curve_vectors)
 
-    # mouth_corner_distance = euclidean_distance(landmarks['outer_lips'][0], landmarks['outer_lips'][6])
-    # normalized_mouth_corner_distance = mouth_corner_distance / face_width
-    # feature_vector.append(normalized_mouth_corner_distance)
+    mouth_corner_distance = euclidean_distance(landmarks['outer_lips'][0], landmarks['outer_lips'][6])
+    normalized_mouth_corner_distance = mouth_corner_distance / face_width
+    feature_vector.append(normalized_mouth_corner_distance)
 
-    # inner_lips_aspect_ratio = mouth_aspect_ratio(landmarks['inner_lips'])
-    # feature_vector.append(inner_lips_aspect_ratio)
+    inner_lips_aspect_ratio = mouth_aspect_ratio(landmarks['inner_lips'])
+    feature_vector.append(inner_lips_aspect_ratio)
 
-    # inner_upper_lip_curve_vectors = curve_vectors(landmarks['inner_upper_lip'])
-    # feature_vector.extend(inner_upper_lip_curve_vectors)
+    inner_upper_lip_curve_vectors = curve_vectors(landmarks['inner_upper_lip'])
+    feature_vector.extend(inner_upper_lip_curve_vectors)
 
     # inner_lower_lip_curve_vectors = curve_vectors(landmarks['inner_lower_lip'])
     # feature_vector.extend(inner_lower_lip_curve_vectors)

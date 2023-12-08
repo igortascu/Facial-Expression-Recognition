@@ -95,7 +95,7 @@ if model != "cnn":
             predictions = predict_fn(vectors)
             print_accuracy(model_name, labels, predictions)
 
-elif model == "cnn":
+if model == "cnn" or model == "":
     labels, images, landmarks_list = load_dataset(
         dataset_path, 
         target_size=cnn_image_size, 

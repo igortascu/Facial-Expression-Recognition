@@ -30,7 +30,7 @@ from more_itertools import flatten
 # 'n_neighbors' is a hyperparameter that you can tune
 def train_knn(feature_vectors, class_labels, classifier = None):
     if classifier is None:
-        classifier = load_model(knn_model_path, KNeighborsClassifier(n_neighbors=5))
+        classifier = KNeighborsClassifier(n_neighbors=5)
     
     print("Training the knn model...")
     classifier.fit(feature_vectors, class_labels)
@@ -39,7 +39,7 @@ def train_knn(feature_vectors, class_labels, classifier = None):
 # Train the naive bayes classifier
 def train_nbc(feature_vectors, class_labels, classifier = None):
     if classifier is None:
-        classifier = load_model(nbc_model_path, GaussianNB())
+        classifier = GaussianNB()
 
     # Train the model incrementally
     print("Training the nbc model...")
@@ -49,8 +49,7 @@ def train_nbc(feature_vectors, class_labels, classifier = None):
 # Train the support vector classifier
 def train_svc(feature_vectors, class_labels, classifier = None):
     if classifier is None:
-        new_pipeline = make_pipeline(StandardScaler(), SVC(C=10, gamma=0.01, kernel='rbf'))
-        classifier = load_model(svc_model_path, new_pipeline)
+        classifier =  make_pipeline(StandardScaler(), SVC(C=10, gamma=0.01, kernel='rbf'))
     
     print("Training the svc model...")
     classifier.fit(feature_vectors, class_labels)
@@ -80,7 +79,6 @@ def train_cnn_on_features(feature_vectors, class_labels, classifier = None):
     return model
 
 def train_cnn_on_images(feature_vectors, class_labels, size, is_grayscale=False, classifier = None):
-    print("is_grayscale", is_grayscale)
 
     classifier = Sequential([
         Conv2D(32, (3, 3), activation='relu', input_shape=(size[0], size[1], 3)),
@@ -139,7 +137,7 @@ if model != "cnn":
                     os.remove(f"models/{model_name}.pkl")
                 save_model(model_logic, f"models/{model_name}.pkl")
 
-elif model == "cnn":
+if model == "cnn" or model == "":
     labels, images, landmarks_list = load_dataset(
         training_dir_path, 
         target_size=cnn_image_size, 

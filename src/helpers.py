@@ -46,7 +46,6 @@ def load_image(path, target_size = None, grayscale = False, bgr = False, normali
         # Resize image
         pil_image = pil_image.resize(target_size)
 
-    print("grayscale", grayscale)
     if grayscale:
         # Convert to grayscale
         pil_image = pil_image.convert('L')

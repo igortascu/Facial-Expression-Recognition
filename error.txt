@@ -1353,3 +1353,16 @@ Could not extract landmarks from image: assets/predict/Happy/Happy1.jpeg
 Could not extract landmarks from image: assets/predict/Happy/Happy2.jpeg
 Could not extract landmarks from image: assets/predict/Happy/Happy.jpeg
 Could not extract landmarks from image: assets/predict/Neutral/Neutral.png
+Could not extract landmarks from image: assets/train2/Sad/sad726.jpg
+Could not extract landmarks from image: assets/train2/Sad/sad-354224.jpg
+Could not extract landmarks from image: assets/train2/Sad/sad2655.jpg
+Could not extract landmarks from image: assets/train2/Happy/happy-910049.jpg
+Could not extract landmarks from image: assets/train2/Happy/happy-979947.jpg
+Could not extract landmarks from image: assets/train2/Happy/happy-692853.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral-186594.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral-845732.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral-543281.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral-201850.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral-472398.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral-289159.jpg
+Could not extract landmarks from image: assets/train2/Neutral/neutral544.jpg
