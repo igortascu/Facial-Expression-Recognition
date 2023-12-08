@@ -188,17 +188,17 @@ def get_feature_vector(landmarks):
     inner_upper_lip_curve_vectors = curve_vectors(landmarks['inner_upper_lip'])
     feature_vector.extend(inner_upper_lip_curve_vectors)
 
-    # inner_lower_lip_curve_vectors = curve_vectors(landmarks['inner_lower_lip'])
-    # feature_vector.extend(inner_lower_lip_curve_vectors)
+    inner_lower_lip_curve_vectors = curve_vectors(landmarks['inner_lower_lip'])
+    feature_vector.extend(inner_lower_lip_curve_vectors)
 
-    # outer_upper_lip_curve_vectors = curve_vectors(landmarks['outer_upper_lip'])
-    # feature_vector.extend(outer_upper_lip_curve_vectors)
+    outer_upper_lip_curve_vectors = curve_vectors(landmarks['outer_upper_lip'])
+    feature_vector.extend(outer_upper_lip_curve_vectors)
 
-    # outer_lower_lip_curve_vectors = curve_vectors(landmarks['outer_lower_lip'])
-    # feature_vector.extend(outer_lower_lip_curve_vectors)
+    outer_lower_lip_curve_vectors = curve_vectors(landmarks['outer_lower_lip'])
+    feature_vector.extend(outer_lower_lip_curve_vectors)
     
-    # jaw_curve_vectors = curve_vectors(landmarks['jaw'])
-    # feature_vector.extend(jaw_curve_vectors)
+    jaw_curve_vectors = curve_vectors(landmarks['jaw'])
+    feature_vector.extend(jaw_curve_vectors)
 
     # face_tilt_angle_using_jaw = calculate_tilt_angle(landmarks['jaw'][0], landmarks['jaw'][16])
     # face_tilt_angle_using_eyes = calculate_tilt_angle(landmarks['left_eye'][3], landmarks['right_eye'][0])

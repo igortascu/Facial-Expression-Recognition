@@ -96,6 +96,8 @@ if model != "cnn":
             print_accuracy(model_name, labels, predictions)
 
 if model == "cnn" or model == "":
+    print(dataset_path)
+    
     labels, images, landmarks_list = load_dataset(
         dataset_path, 
         target_size=cnn_image_size, 
