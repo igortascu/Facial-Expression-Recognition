@@ -1374,3 +1374,42 @@ Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
 Could not find face in image: assets/train/Anger/Anger.jpg
 Could not find face in image: assets/predict/Anger/Anger.jpg
 Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
+Could not load image (cnn): assets/train3/Happy/happy1283.jpg
+Could not load image (cnn): assets/train3/Happy/happy1283.jpg
+Could not load image (cnn): assets/train3/Happy/happy1283.jpg
+Could not load image (cnn): assets/train3/Happy/happy1283.jpg
+Could not find face in image: assets/train/Anger/Anger.jpg
+Could not find face in image: assets/train/Sad/Sad copy 16.jpg
+Could not find face in image: assets/train/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/train/Anger/Anger.jpg
+Could not find face in image: assets/train/Sad/Sad copy 16.jpg
+Could not find face in image: assets/train/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/train/Anger/Anger.jpg
+Could not find face in image: assets/train/Sad/Sad copy 16.jpg
+Could not find face in image: assets/train/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/train/Anger/Anger.jpg
+Could not find face in image: assets/train/Sad/Sad copy 16.jpg
+Could not find face in image: assets/train/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg
+Could not find face in image: assets/predict/Anger/Anger.jpg
+Could not find face in image: assets/predict/Sad/Sad copy 16.jpg
+Could not find face in image: assets/predict/Surprised/Surprised copy 18.jpg

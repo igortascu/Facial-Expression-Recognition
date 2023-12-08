@@ -4,3 +4,38 @@ assets/predict/Surprised/Surprised copy 18.jpg
 assets/train/Anger/Anger.jpg
 assets/predict/Anger/Anger.jpg
 assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg

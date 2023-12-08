@@ -4,6 +4,8 @@ import numpy as np
 from scipy.interpolate import splprep, splev
 from sklearn.naive_bayes import GaussianNB
 import joblib
+from PIL import Image
+
 from helpers import all_class_labels, load_image
 
 class Point:
@@ -112,6 +114,8 @@ def curve_vectors(curved):
 
         ## Could add the distance between the highest and the line connecting the two ends of the eyebrow
         vectors = [mean_angular_change, area_under_curve, max_curvature, mean_curvature]
+
+        vectors.extend(curvature)
 
         return vectors
 
@@ -253,3 +257,42 @@ def process_images(image_labels_and_paths, detector, predictor):
             continue
 
     return (feature_vectors, classification_labels)
+
+def load_and_preprocess_image(image_path, target_size, grayscale = False):
+    # Load image
+    img = Image.open(image_path)
+
+    if grayscale:
+        # Convert to grayscale
+        img = img.convert('L')
+    
+    # Resize image
+    img = img.resize(target_size)
+
+    # Convert image to array and normalize
+    img_array = np.array(img) / 255.0
+
+    return img_array
+
+def process_images_for_cnn(image_labels_and_paths, target_size, grayscale = False):
+    class_labels = []
+    image_vectors = []
+
+    for (label, path) in image_labels_and_paths:
+        try:
+            image_vector = load_and_preprocess_image(path, target_size, grayscale)
+        except:
+            with open("error.txt", "a") as f:
+                f.write("Could not load image (cnn): " + path + "\n")
+            continue
+
+        if image_vector is None:
+            print('Could not open or find the image: ');
+            with open("error.txt", "a") as f:
+                f.write('Could not open or find the image: ' + path + "\n")
+            continue
+
+        image_vectors.append(image_vector)
+        class_labels.append(label)
+
+    return (np.array(image_vectors) , class_labels)

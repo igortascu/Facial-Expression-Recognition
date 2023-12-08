@@ -11,6 +11,8 @@ nbc_model_path = "models/nbc.pkl"
 knn_model_path = "models/knn.pkl"
 svc_model_path = "models/svc.pkl"
 cnn_model_path = "models/cnn.h5"
+cnn_image_size = (64, 64)
+cnn_is_greyscale = True
 
 def highlight_landmarks(image, landmarks):
     for i in range(0, 68):
