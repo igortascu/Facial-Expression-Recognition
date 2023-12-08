@@ -1,12 +1,14 @@
 import cv2
 import dlib
 import numpy as np
+import os
 from scipy.interpolate import splprep, splev
 from sklearn.naive_bayes import GaussianNB
+from tensorflow.keras.utils import to_categorical
 import joblib
 from PIL import Image
 
-from helpers import all_class_labels, load_image
+from helpers import all_class_labels, load_image, load_dataset_paths
 
 class Point:
     def __init__(self, x, y):
@@ -160,139 +162,149 @@ def get_bayes_classifier():
 
 def load_model(model_path, new_model = None):
     try:
-        model = joblib.load(model_path)
-        return model
+        try:
+            model = joblib.load(model_path)
+            return model
+        except:
+            model = joblib.load(model_path.split('.')[0] + '.h5')
+            return model
     except FileNotFoundError:
+        if new_model is None:
+            raise Exception(f"Model {model_path} does not exist and no new model was provided")
         return new_model
     
 
 def save_model(classifier, model_path):
-    joblib.dump(classifier, model_path)
+    if hasattr(classifier, 'save') and callable(getattr(classifier, 'save')):
+        classifier.save(model_path.split('.')[0] + '.h5')
+        return
+    
+    joblib.dump(classifier, model_path, compress=9)
 
 def get_feature_vector(landmarks):
     landmarks = format_landmarks(landmarks)
     feature_vector = []
 
+    # basic features
     left_eye_aspect_ratio = eye_aspect_ratio(landmarks['left_eye'])
     feature_vector.append(left_eye_aspect_ratio)
 
     right_eye_aspect_ratio = eye_aspect_ratio(landmarks['right_eye'])
     feature_vector.append(right_eye_aspect_ratio)
 
-    left_eyebrow_curve_vectors = curve_vectors(landmarks['left_eyebrow'])
-    feature_vector.extend(left_eyebrow_curve_vectors)
+    # face_width = euclidean_distance(landmarks['jaw'][0], landmarks['jaw'][16])
+    # eyebrow_distance = euclidean_distance(landmarks['left_eyebrow'][4], landmarks['right_eyebrow'][0])
+    # normalized_eyebrow_distance = eyebrow_distance / face_width
+    # feature_vector.append(normalized_eyebrow_distance)
 
-    right_eyebrow_curve_vectors = curve_vectors(landmarks['right_eyebrow'])
-    feature_vector.extend(right_eyebrow_curve_vectors)
+    # left_eyebrow_curve_vectors = curve_vectors(landmarks['left_eyebrow'])
+    # feature_vector.extend(left_eyebrow_curve_vectors)
 
-    face_width = euclidean_distance(landmarks['jaw'][0], landmarks['jaw'][16])
-    eyebrow_distance = euclidean_distance(landmarks['left_eyebrow'][4], landmarks['right_eyebrow'][0])
-    normalized_eyebrow_distance = eyebrow_distance / face_width
-    feature_vector.append(normalized_eyebrow_distance)
+    # right_eyebrow_curve_vectors = curve_vectors(landmarks['right_eyebrow'])
+    # feature_vector.extend(right_eyebrow_curve_vectors)
 
-    mouth_corner_distance = euclidean_distance(landmarks['outer_lips'][0], landmarks['outer_lips'][6])
-    normalized_mouth_corner_distance = mouth_corner_distance / face_width
-    feature_vector.append(normalized_mouth_corner_distance)
+    # mouth_corner_distance = euclidean_distance(landmarks['outer_lips'][0], landmarks['outer_lips'][6])
+    # normalized_mouth_corner_distance = mouth_corner_distance / face_width
+    # feature_vector.append(normalized_mouth_corner_distance)
 
-    inner_lips_aspect_ratio = mouth_aspect_ratio(landmarks['inner_lips'])
-    feature_vector.append(inner_lips_aspect_ratio)
+    # inner_lips_aspect_ratio = mouth_aspect_ratio(landmarks['inner_lips'])
+    # feature_vector.append(inner_lips_aspect_ratio)
 
-    inner_upper_lip_curve_vectors = curve_vectors(landmarks['inner_upper_lip'])
-    feature_vector.extend(inner_upper_lip_curve_vectors)
+    # inner_upper_lip_curve_vectors = curve_vectors(landmarks['inner_upper_lip'])
+    # feature_vector.extend(inner_upper_lip_curve_vectors)
 
-    inner_lower_lip_curve_vectors = curve_vectors(landmarks['inner_lower_lip'])
-    feature_vector.extend(inner_lower_lip_curve_vectors)
+    # inner_lower_lip_curve_vectors = curve_vectors(landmarks['inner_lower_lip'])
+    # feature_vector.extend(inner_lower_lip_curve_vectors)
 
-    outer_upper_lip_curve_vectors = curve_vectors(landmarks['outer_upper_lip'])
-    feature_vector.extend(outer_upper_lip_curve_vectors)
+    # outer_upper_lip_curve_vectors = curve_vectors(landmarks['outer_upper_lip'])
+    # feature_vector.extend(outer_upper_lip_curve_vectors)
 
-    outer_lower_lip_curve_vectors = curve_vectors(landmarks['outer_lower_lip'])
-    feature_vector.extend(outer_lower_lip_curve_vectors)
+    # outer_lower_lip_curve_vectors = curve_vectors(landmarks['outer_lower_lip'])
+    # feature_vector.extend(outer_lower_lip_curve_vectors)
     
-    jaw_curve_vectors = curve_vectors(landmarks['jaw'])
-    feature_vector.extend(jaw_curve_vectors)
+    # jaw_curve_vectors = curve_vectors(landmarks['jaw'])
+    # feature_vector.extend(jaw_curve_vectors)
 
-    face_tilt_angle_using_jaw = calculate_tilt_angle(landmarks['jaw'][0], landmarks['jaw'][16])
-    face_tilt_angle_using_eyes = calculate_tilt_angle(landmarks['left_eye'][3], landmarks['right_eye'][0])
-    avg_face_tilt_angle = (face_tilt_angle_using_jaw + face_tilt_angle_using_eyes) / 2
-    feature_vector.append(avg_face_tilt_angle)
+    # face_tilt_angle_using_jaw = calculate_tilt_angle(landmarks['jaw'][0], landmarks['jaw'][16])
+    # face_tilt_angle_using_eyes = calculate_tilt_angle(landmarks['left_eye'][3], landmarks['right_eye'][0])
+    # avg_face_tilt_angle = (face_tilt_angle_using_jaw + face_tilt_angle_using_eyes) / 2
+    # feature_vector.append(avg_face_tilt_angle)
 
-    nose_bridge_tilt_angle = calculate_tilt_angle(landmarks['nost_bridge'][0], landmarks['nost_bridge'][3])
-    feature_vector.append(nose_bridge_tilt_angle)
+    # nose_bridge_tilt_angle = calculate_tilt_angle(landmarks['nost_bridge'][0], landmarks['nost_bridge'][3])
+    # feature_vector.append(nose_bridge_tilt_angle)
 
     return feature_vector
 
-# Converts the images to feature vectors and classification labels
-# Returns a tuple of (feature_vectors, classification_labels)
-def process_images(image_labels_and_paths, detector, predictor):
-    feature_vectors = []
-    classification_labels = []
 
-    for (label, path) in image_labels_and_paths:
-        image = load_image(path)
-        if image is None:
-            print('Could not open or find the image: ');
-            with open("error.txt", "a") as f:
-                f.write('Could not open or find the image: ' + path + "\n")
-            continue
+# Loads the dataset into memory
+#
+# Note - This function caches the dataset in .cache/dataset.cache
+#      - It might fail if you don't have enough physical memory
+#      - If you get a MemoryError, try setting the cache parameter to False
+#
+# Inputs:
+#   path: The path to the dataset
+#   limit: The maximum number of images to load from each class
+def load_dataset(path, limit = 0, target_size = None, grayscale = False, cache = True, bgr = False):
+    cache_path = f".cache/{os.path.basename(path)}.cache"
+    try:
+        dataset = joblib.load(cache_path)
+    except:
+        detector, predictor = get_dlib_utils()
 
-        landmarks = image_to_landmarks(image, detector, predictor)
+        paths = load_dataset_paths(path, limit)
+        labels = []
+        images = []
+        landmarks_list = []
 
-        if landmarks is None:
-            print("Could not find face in image: " + path)
-            with open("error.txt", "a") as f:
-                f.write("Could not find face in image: " + path + "\n")
-            with open("delete.txt", "a") as f:
-                f.write(path + "\n")
-            continue
+        for label, path in paths:
+            try:
+                image = load_image(path, target_size, grayscale, bgr)
+            except:
+                print('Could not open or find the image: ' + path);
+                with open("error.txt", "a") as f:
+                    f.write('Could not open or find the image: ' + path + "\n")
+                continue
+
+            try:
+                landmarks = image_to_landmarks(image, detector, predictor)
+
+                if landmarks is None:
+                    raise Exception("Could not find face in image: " + path)
+                   
+            except:
+                print("Could not extract landmarks from image: " + path)
+                with open("error.txt", "a") as f:
+                    f.write("Could not extract landmarks from image: " + path + "\n")
+                with open("delete.txt", "a") as f:
+                    f.write(path + "\n")
+                continue
+
+            labels.append(label)
+            images.append(image)
+            landmarks_list.append(landmarks)
         
-        try:
-            feature_vector = get_feature_vector(landmarks)
-            feature_vectors.append(feature_vector)
-            classification_labels.append(label)
-        except Exception as e:
-            print("Could not retrieve feature vectors: " + path)
-            with open("error.txt", "a") as f:
-                f.write("Could not retrieve feature vectors: " + path + "\n")
-            continue
+        dataset = (labels, images, landmarks_list)
 
-    return (feature_vectors, classification_labels)
+        if cache and len(images) > 0:
+            if not os.path.exists(".cache"):
+                os.mkdir(".cache")
+            joblib.dump(dataset, cache_path, compress=9)
 
-def load_and_preprocess_image(image_path, target_size, grayscale = False):
-    # Load image
-    img = Image.open(image_path)
+    return dataset
 
-    if grayscale:
-        # Convert to grayscale
-        img = img.convert('L')
-    
-    # Resize image
-    img = img.resize(target_size)
+# Converts the landmarks to feature vectors and classification labels
+# Returns a list of features
+def extract_features(landmarks_list):
+    return list(map(lambda landmarks: get_feature_vector(landmarks), landmarks_list))
 
-    # Convert image to array and normalize
-    img_array = np.array(img) / 255.0
+def encode_labels_for_cnn(labels):
+    mapped_labels = list(map(lambda x: all_class_labels.index(x), labels))
+    onehot_encoded = to_categorical(mapped_labels)
 
-    return img_array
+    return onehot_encoded
 
-def process_images_for_cnn(image_labels_and_paths, target_size, grayscale = False):
-    class_labels = []
-    image_vectors = []
-
-    for (label, path) in image_labels_and_paths:
-        try:
-            image_vector = load_and_preprocess_image(path, target_size, grayscale)
-        except:
-            with open("error.txt", "a") as f:
-                f.write("Could not load image (cnn): " + path + "\n")
-            continue
-
-        if image_vector is None:
-            print('Could not open or find the image: ');
-            with open("error.txt", "a") as f:
-                f.write('Could not open or find the image: ' + path + "\n")
-            continue
-
-        image_vectors.append(image_vector)
-        class_labels.append(label)
-
-    return (np.array(image_vectors) , class_labels)
+def decode_labels_for_cnn(encoded_labels):
+    decoded_indices = np.argmax(encoded_labels, axis=1)
+    labels = map(lambda x: all_class_labels[x], decoded_indices)
+    return labels

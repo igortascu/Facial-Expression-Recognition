@@ -20,8 +20,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.models import load_model as load_keras_model
 
-from ai import euclidean_distance, eye_aspect_ratio, save_model, image_to_landmarks, format_landmarks, get_feature_vector, get_bayes_classifier,  get_dlib_utils, process_images, load_model, process_images_for_cnn 
-from helpers import load_image, cnn_image_size, all_class_labels, load_dataset, cnn_model_path, svc_model_path, knn_model_path, nbc_model_path, cnn_is_greyscale
+from ai import euclidean_distance, eye_aspect_ratio, encode_labels_for_cnn, save_model, image_to_landmarks, load_dataset, format_landmarks, get_feature_vector, get_bayes_classifier,  get_dlib_utils, extract_features, load_model
+from helpers import load_image, cnn_image_size, get_model_path, all_class_labels, cnn_model_path, svc_model_path, knn_model_path, nbc_model_path, cnn_is_greyscale
 from more_itertools import flatten
 
 # Train the k nearest neighbors classifier
@@ -34,7 +34,6 @@ def train_knn(feature_vectors, class_labels, classifier = None):
     
     print("Training the knn model...")
     classifier.fit(feature_vectors, class_labels)
-    save_model(classifier, knn_model_path)
     return classifier
 
 # Train the naive bayes classifier
@@ -45,7 +44,6 @@ def train_nbc(feature_vectors, class_labels, classifier = None):
     # Train the model incrementally
     print("Training the nbc model...")
     classifier.partial_fit(feature_vectors, class_labels, classes=all_class_labels)
-    save_model(classifier, nbc_model_path)
     return classifier
 
 # Train the support vector classifier
@@ -56,10 +54,32 @@ def train_svc(feature_vectors, class_labels, classifier = None):
     
     print("Training the svc model...")
     classifier.fit(feature_vectors, class_labels)
-    save_model(classifier, svc_model_path)
     return classifier
 
-def train_cnn(feature_vectors, class_labels, size, classifier = None):
+def train_cnn_on_features(feature_vectors, class_labels, classifier = None):
+
+    print("Training the cnn (features) model...")
+    num_features = len(feature_vectors[0])
+
+    model = Sequential([
+        Dense(64, activation='relu', input_shape=(num_features,)),
+        Dropout(0.5),
+        Dense(32, activation='relu'),
+        Dense(len(all_class_labels), activation='softmax')
+    ])
+
+    encoded_labels = encode_labels_for_cnn(class_labels)
+    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+    
+    if isinstance(feature_vectors, list):
+        feature_vectors = np.array(feature_vectors)
+
+    # Train the model
+    model.fit(feature_vectors, encoded_labels, epochs=10, batch_size=32)
+
+    return model
+
+def train_cnn_on_images(feature_vectors, class_labels, size, classifier = None):
 
     if classifier is None:
         try:
@@ -78,44 +98,53 @@ def train_cnn(feature_vectors, class_labels, size, classifier = None):
     classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
     print("Training the cnn model...")
-    # Convert string labels to integers
-    label_encoder = LabelEncoder()
-    encoded_class_labels = list(map(lambda x: all_class_labels.index(x), class_labels))
-    # integer_encoded = label_encoder.fit_transform(class_labels)
-
-    # save_model(label_encoder, "models/cnn_label_encoder.pkl")
-
-    # convert integers to one-hot encoded labels
-    onehot_encoded = to_categorical(encoded_class_labels)
+    encoded_labels = encode_labels_for_cnn(class_labels)
 
     # Train the model
     #   @param validation_data=(X_val, y_val)
-    classifier.fit(feature_vectors, onehot_encoded, epochs=10)
+    classifier.fit(feature_vectors, encoded_labels, epochs=10)
 
-    # Save the model
-    classifier.save(cnn_model_path)
+    return classifier
 
 model = os.environ['model'] if 'model' in os.environ else ""
-data = os.environ['data'] if 'data' in os.environ else ""
+data = os.environ['data'] if 'data' in os.environ else "1"
+output = os.environ['output'] if 'output' in os.environ else None
 
-training_dir_path = "assets/train" + (data if data != '1' else "" )
+training_dir_path = "assets/train" + data
 
 print("Training dir path: " + training_dir_path)
-classifier = None
-dataset = load_dataset(training_dir_path, flatten=True)
 
-print("About to train model: " + model)
 if model != "cnn":
-    detector, predictor = get_dlib_utils()
-    vectors, labels = process_images(dataset, detector, predictor)
+    labels, images, landmarks_list = load_dataset(training_dir_path)
+    vectors = extract_features(landmarks_list)
 
-    mapped_models = [("knn", train_knn), ("svc", train_svc),  ("nbc", train_nbc)]
+    mapped_models = [("knn", train_knn), ("svc", train_svc), ("nbc", train_nbc)]
 
     for (model_name, training_fn) in mapped_models:
         if model == model_name or model == "":
-            training_fn(vectors, labels)
+            model_logic = training_fn(vectors, labels)
+            
+            if output:
+                print(f"Saving {model_name} model to " + output)
+
+                output_path = get_model_path(model_name, output)
+                save_model(model_logic, output_path)
+
+                default_path = f"models/{model_name}.pkl"
+                
+                try:
+                    os.remove(default_path)
+                except:
+                    pass
+
+                os.symlink(output_path, default_path)
+            else:
+                if os.path.exists(f"models/{model_name}.pkl"):
+                    os.remove(f"models/{model_name}.pkl")
+                save_model(model_logic, f"models/{model_name}.pkl")
 
 elif model == "cnn":
-    vectors, labels = process_images_for_cnn(dataset, cnn_image_size, cnn_is_greyscale)
-    print(vectors)
-    train_cnn(vectors, labels, cnn_image_size)
+    labels, images, landmarks_list = load_dataset(training_dir_path)
+    images = np.array(images)
+
+    train_cnn_on_images(images, labels, cnn_image_size)

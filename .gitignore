@@ -1,1 +1,7 @@
-__pycache__
+__pycache__/
+.cache/
+
+models/knn.pkl
+models/cnn.pkl
+models/nbc.pkl
+models/svm.pkl

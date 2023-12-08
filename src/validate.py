@@ -35,14 +35,14 @@ total = 0
 
 for dir_id in validation_data:
     image_paths = os.listdir("assets/predict/" + str(dir_id))
-    image_labels_and_paths = []
+    labelled_images = []
 
     for image_path in image_paths:
         for label in all_class_labels:
             if label.lower() in image_path.lower():
-                image_labels_and_paths.append((label, "assets/predict/" + str(dir_id) + "/" + image_path))
+                labelled_images.append((label, "assets/predict/" + str(dir_id) + "/" + image_path))
     
-    for (label, path) in image_labels_and_paths:
+    for (label, path) in labelled_images:
         results = predict_emotion(classifier, path)
         if results is None:
             print("Could not predict_emotion for image: " + path)

@@ -54,3 +54,45 @@
   - **v2.2.1** Accuracy:  20%
   - **v2.3.1** Accuracy:  16%
 
+## Classification Reports
+### Version 2
+#### K-Nearest Neighbors (KNN) Classification Report
+| Emotion   | Precision | Recall | F1-Score | Support |
+|-----------|-----------|--------|----------|---------|
+| Anger     | 0.00      | 0.00   | 0.00     | 1       |
+| Fear      | 0.00      | 0.00   | 0.00     | 3       |
+| Happy     | 0.33      | 0.33   | 0.33     | 3       |
+| Neutral   | 0.00      | 0.00   | 0.00     | 1       |
+| Sad       | 0.00      | 0.00   | 0.00     | 1       |
+| Surprised | 0.00      | 0.00   | 0.00     | 4       |
+| **Accuracy**  |          |        | 0.08     | 13      |
+| **Macro Avg** | 0.06      | 0.06   | 0.06     | 13      |
+| **Weighted Avg** | 0.08      | 0.08   | 0.08     | 13      |
+
+#### Support Vector Classifier (SVC) Classification Report
+| Emotion   | Precision | Recall | F1-Score | Support |
+|-----------|-----------|--------|----------|---------|
+| Anger     | 0.00      | 0.00   | 0.00     | 1       |
+| Fear      | 0.00      | 0.00   | 0.00     | 3       |
+| Happy     | 0.00      | 0.00   | 0.00     | 3       |
+| Neutral   | 0.08      | 1.00   | 0.14     | 1       |
+| Sad       | 0.00      | 0.00   | 0.00     | 1       |
+| Surprised | 0.00      | 0.00   | 0.00     | 4       |
+| **Accuracy**  |          |        | 0.08     | 13      |
+| **Macro Avg** | 0.01      | 0.17   | 0.02     | 13      |
+| **Weighted Avg** | 0.01      | 0.08   | 0.01     | 13      |
+
+#### Naive Bayes Classifier (NBC) Classification Report
+| Emotion   | Precision | Recall | F1-Score | Support |
+|-----------|-----------|--------|----------|---------|
+| Anger     | 0.00      | 0.00   | 0.00     | 1       |
+| Fear      | 0.00      | 0.00   | 0.00     | 3       |
+| Happy     | 0.23      | 1.00   | 0.38     | 3       |
+| Neutral   | 0.00      | 0.00   | 0.00     | 1       |
+| Sad       | 0.00      | 0.00   | 0.00     | 1       |
+| Surprised | 0.00      | 0.00   | 0.00     | 4       |
+| **Accuracy**  |          |        | 0.23     | 13      |
+| **Macro Avg** | 0.04      | 0.17   | 0.06     | 13      |
+| **Weighted Avg** | 0.05      | 0.23   | 0.09     | 13      |
+
+### Basic Feature Extraction

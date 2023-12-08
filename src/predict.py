@@ -13,44 +13,59 @@ from sklearn.preprocessing import LabelEncoder
 
 from tensorflow.keras.models import load_model as load_keras_model
 
-from ai import process_images, load_model, get_dlib_utils, process_images_for_cnn
-from helpers import all_class_labels, nbc_model_path, knn_model_path, svc_model_path, load_dataset, cnn_model_path, cnn_image_size, cnn_is_greyscale
+from ai import extract_features, load_model, get_dlib_utils, load_dataset, decode_labels_for_cnn
+from helpers import all_class_labels, get_model_path, cnn_image_size, cnn_is_greyscale
 
-detector, predictor = get_dlib_utils()
-
-def predict_with_knn(feature_vectors, classifier):
-    print("Predicting with  the knn model...")
-
+def predict_with_knn(feature_vectors, version = None, classifier = None):
     if classifier is None:
-          classifier = load_model(knn_model_path)
-    return classifier, classifier.predict(feature_vectors)
+          path = get_model_path("knn", version)
+          classifier = load_model(path)
+    return classifier.predict(feature_vectors)
 
-def predict_with_nbc(feature_vectors, classifier):
-    print("Predicting with  the nbc model...")
+def predict_with_nbc(feature_vectors, version = None, classifier = None):
     if classifier is None:
-        classifier = load_model(nbc_model_path)
+        path = get_model_path("nbc", version)
+        classifier = load_model(path)
 
     probabilities = classifier.predict_proba(feature_vectors)
     get_predicted_label = lambda prb: all_class_labels[max(enumerate(prb), key=lambda x: x[1])[0]]
     predictions = list(map(get_predicted_label, probabilities))
+    return predictions
 
-    return classifier, predictions
-
-classifier = None
-dataset = load_dataset("assets/predict", flatten=True)
-model = os.environ['model'] if 'model' in os.environ else ""
-
-def predict_with_svc(feature_vectors, classifier):
-    print("Predicting with  the svc model...")
+def predict_with_svc(feature_vectors, version = None, classifier = None):
     if classifier is None:
-        classifier = load_model(svc_model_path)
-    return classifier, classifier.predict(feature_vectors)
+        path = get_model_path("svc", version)
+        classifier = load_model(path)
+    return classifier.predict(feature_vectors)
 
-def predict_with_cnn(feature_vectors, model = None):
+def predict_with_cnn_f(feature_vectors, version = None, model = None):
+
+    print("Predicting with the cnn (features) model...")
+    if model is None:
+        path = get_model_path("cnn-f", version)
+        model = load_keras_model(path)
+
+    if isinstance(feature_vectors, list):
+        feature_vectors = np.array(feature_vectors)
+
+    encoded_labels = model.predict(feature_vectors)
+    return decode_labels_for_cnn(encoded_labels)
+
+def predict_with_cnn_l(feature_vectors, version = None, model = None):
+        print("Predicting with the cnn (landmarks) model...")
+        if model is None:
+            path = get_model_path("cnn-l", version)
+            model = load_keras_model(path)
+    
+        encoded_labels = model.predict(feature_vectors)
+        return decode_labels_for_cnn(encoded_labels)
+
+def predict_with_cnn(feature_vectors, version = None, model = None):
 
     print("Predicting with the cnn model...")
     if model is None:
-        model = load_keras_model(cnn_model_path)
+        path = get_model_path("cnn", version)
+        model = load_keras_model(path)
 
     predictions = model.predict(feature_vectors)
     decoded_indices = np.argmax(predictions, axis=1)
@@ -59,33 +74,33 @@ def predict_with_cnn(feature_vectors, model = None):
     # label_encoder = load_model("models/cnn_label_encoder.pkl")
     # predicted_labels = label_encoder.inverse_transform(predicted_indices)
 
-    return model, predicted_labels
+    return predicted_labels
 
+def print_accuracy(name, expected_list, predicted_list):
+    print("Classification report for " + name + ": ")
+    print(classification_report(expected_list, predicted_list, zero_division=0))
 
-def print_accuracy(name, expected, predicted):
-    print("\nPredicting with the " + name + " model...")
-    accuracy = 0
-    total = 0
-    for expected, predicted in zip(labels, predictions):
-        print(expected, predicted)
-        total += 1
-        if predicted == expected:
-            accuracy += 1
-    print("Accuracy: ", accuracy / total)
-    print("Total Accuracy: ", accuracy / total)
+classifier = None
+model = os.environ['model'] if 'model' in os.environ else ""
+data = os.environ['data'] if 'data' in os.environ else "0"
+version = os.environ['v'] if 'v' in os.environ else (os.environ['version'] if 'version' in os.environ else None)
 
+dataset_path = "assets/predict" if data == "0" else "assets/train" + data
 
 if model != "cnn":
-    vectors, labels = process_images(dataset, detector, predictor)
+    labels, images, landmarks_list = load_dataset(dataset_path)
+    vectors = extract_features(landmarks_list)
 
     mapped_models = [("knn", predict_with_knn), ("svc", predict_with_svc),  ("nbc", predict_with_nbc)]
 
     for (model_name, predict_fn) in mapped_models:
         if model == model_name or model == "":
-            classifier, predictions = predict_fn(vectors, classifier)
+            predictions = predict_fn(vectors)
             print_accuracy(model_name, labels, predictions)
 
 elif model == "cnn":
-    vectors, labels = process_images_for_cnn(dataset, cnn_image_size, cnn_is_greyscale)
-    classifier, predictions = predict_with_cnn(vectors)
+    labels, images, landmarks_list = load_dataset(dataset_path, target_size=cnn_image_size, grayscale=cnn_is_greyscale)
+    images = np.array(images)
+
+    predictions = predict_with_cnn(images)
     print_accuracy("cnn", labels, predictions)

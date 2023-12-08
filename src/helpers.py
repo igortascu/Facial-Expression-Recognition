@@ -1,7 +1,10 @@
 import cv2
+from PIL import Image
+import numpy as np
 import sys
 import os
-from more_itertools import chunked, take, flatten as flatten_iter, interleave_longest as interleave
+import joblib
+from more_itertools import take 
 
 all_class_labels = ["Anger",  
                     "Sad", "Surprised", "Fear","Happy", 
@@ -14,6 +17,20 @@ cnn_model_path = "models/cnn.h5"
 cnn_image_size = (64, 64)
 cnn_is_greyscale = True
 
+def get_defualt_model_path(name):
+    return f"models/{name}.pkl"
+
+def get_model_path(name, version = None):
+    ext = "h5" if "cnn" in name else "pkl"
+
+    if version:
+        return f"models/{name}/{version}.{ext}"
+    
+    if os.path.islink(f"models/{name}.{ext}"):
+        return os.readlink(f"models/{name}.{ext}")
+    
+    return f"models/{name}.{ext}"
+
 def highlight_landmarks(image, landmarks):
     for i in range(0, 68):
         x = landmarks.part(i).x
@@ -21,17 +38,39 @@ def highlight_landmarks(image, landmarks):
         cv2.circle(image, (x, y), 2, (0, 255, 0), -1)
         cv2.putText(image, str(i), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0, 0, 255), 1)
 
-def load_image(path):
-    image = cv2.imread(path)
-    return image
+def load_image(path, target_size = None, grayscale = False, bgr = False, normalize = False):
+     # Load image using Pillow
+    pil_image = Image.open(path)
+    
+    if target_size:
+        # Resize image
+        img = img.resize(target_size)
 
-# Loads the dataset from the given path
+    if grayscale:
+        # Convert to grayscale
+        img = img.convert('L')
+
+    # Convert PIL image to RGB (if not already in this format)
+    img = pil_image.convert('RGB')
+    img = np.array(img)
+
+    if normalize:
+        # Convert image to NumPy array and normalize
+        img = img / 255.0
+
+    # Convert RGB to BGR for dlib (because dlib uses BGR)
+    if bgr:
+        img = img[:, :, ::-1]
+
+    return  img
+
+# Loads the label and full path for each image in the dataset
+#
 # Inputs:
 #   path: The path to the dataset
-#   chunks: The number of chunks to split the dataset into. Useful for incremental training
 #   flatten: Whether to flatten the dataset or not
 #   limit: The maximum number of images to load from each class
-def load_dataset(path, chunks=0, flatten=False, limit = 0):
+def load_dataset_paths(path, limit = 0):
     store = []
 
     if limit == 0:
@@ -41,21 +80,6 @@ def load_dataset(path, chunks=0, flatten=False, limit = 0):
         image_paths = os.listdir(path + "/" + emotion_label)
         image_paths_with_labels = list(map(lambda filename: (emotion_label, f"{path}/{emotion_label}/{filename}"), image_paths))
         
-        if chunks == 0:
-            if flatten:
-                store.extend(take(limit, image_paths_with_labels))
-            else: 
-                store.append(list(take(limit, image_paths_with_labels)))
-            continue
-        
-        chunks_iter = chunked(take(limit, image_paths_with_labels), chunks)
+        store.extend(take(limit, image_paths_with_labels))
 
-        if flatten:
-            store.extend(flatten_iter(chunks_iter))
-        else:
-            store.append(list(chunks_iter))
-
-    if chunks == 0:
-        return store
-
-    return list(interleave(store))
+    return store

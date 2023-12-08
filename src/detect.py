@@ -1,11 +1,18 @@
+"""
+    The purpose of this script is to detect mislabeled images in our dataset and correct them.
+    This script is only used in the preprocessing stage of the project.
+"""
+
 from deepface import DeepFace
 import os
 from random import randint
-from helpers import all_class_labels, load_dataset
+from helpers import all_class_labels
+
+from ai import load_dataset
 from more_itertools import take
 # Directory containing your images
 
-dataset = load_dataset("assets/train2", flatten=True)
+dataset = load_dataset("assets/train2")
 
 # Loop through each file in the directory
 

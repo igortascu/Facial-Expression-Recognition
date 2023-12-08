@@ -1,6 +1,5 @@
 # Facial-Expression-Recognition
-
-Made with help from ChatGPT. Here's a link to the [chat history](https://chat.openai.com/c/8751a64b-c174-4492-8099-bf85d5cb9b8c)
+Utilized Chatgpt for insight on aspects of the implementation [chat history](https://chat.openai.com/c/8751a64b-c174-4492-8099-bf85d5cb9b8c)
 
 ### Feature Extraction using Dlib
 In Dlib's 68 facial **landmark** detector, each of the 68 landmarks corresponds to a specific facial feature. These landmarks are a standard way to map the human face, allowing for detailed facial analysis. Here is an explanation of what each group of landmarks represents:

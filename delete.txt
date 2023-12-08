@@ -39,3 +39,86 @@ assets/predict/Surprised/Surprised copy 18.jpg
 assets/predict/Anger/Anger.jpg
 assets/predict/Sad/Sad copy 16.jpg
 assets/predict/Surprised/Surprised copy 18.jpg
+assets/train2/Anger/anger-758797.jpg
+assets/train2/Anger/anger-695603.jpg
+assets/train2/Sad/sad1209.jpg
+assets/train2/Sad/sad1660.jpg
+assets/train2/Sad/sad726.jpg
+assets/train2/Sad/sad-354224.jpg
+assets/train2/Sad/sad2655.jpg
+assets/train2/Happy/happy-910049.jpg
+assets/train2/Happy/happy-979947.jpg
+assets/train2/Happy/happy-692853.jpg
+assets/train2/Neutral/neutral-186594.jpg
+assets/train2/Neutral/neutral-845732.jpg
+assets/train2/Neutral/neutral-543281.jpg
+assets/train2/Neutral/neutral-201850.jpg
+assets/train2/Neutral/neutral-472398.jpg
+assets/train2/Neutral/neutral-289159.jpg
+assets/train2/Neutral/neutral544.jpg
+assets/train2/Anger/anger-758797.jpg
+assets/train2/Anger/anger-695603.jpg
+assets/train2/Sad/sad1209.jpg
+assets/train2/Sad/sad1660.jpg
+assets/train2/Sad/sad726.jpg
+assets/train2/Sad/sad-354224.jpg
+assets/train2/Sad/sad2655.jpg
+assets/train2/Happy/happy-910049.jpg
+assets/train2/Happy/happy-979947.jpg
+assets/train2/Happy/happy-692853.jpg
+assets/train2/Neutral/neutral-186594.jpg
+assets/train2/Neutral/neutral-845732.jpg
+assets/train2/Neutral/neutral-543281.jpg
+assets/train2/Neutral/neutral-201850.jpg
+assets/train2/Neutral/neutral-472398.jpg
+assets/train2/Neutral/neutral-289159.jpg
+assets/train2/Neutral/neutral544.jpg
+assets/train2/Anger/anger-758797.jpg
+assets/train2/Anger/anger-695603.jpg
+assets/train2/Sad/sad1209.jpg
+assets/train2/Sad/sad1660.jpg
+assets/train2/Sad/sad726.jpg
+assets/train2/Sad/sad-354224.jpg
+assets/train2/Sad/sad2655.jpg
+assets/train2/Happy/happy-910049.jpg
+assets/train2/Happy/happy-979947.jpg
+assets/train2/Happy/happy-692853.jpg
+assets/train2/Neutral/neutral-186594.jpg
+assets/train2/Neutral/neutral-845732.jpg
+assets/train2/Neutral/neutral-543281.jpg
+assets/train2/Neutral/neutral-201850.jpg
+assets/train2/Neutral/neutral-472398.jpg
+assets/train2/Neutral/neutral-289159.jpg
+assets/train2/Neutral/neutral544.jpg
+assets/train2/Anger/anger-758797.jpg
+assets/train2/Anger/anger-695603.jpg
+assets/train2/Sad/sad1209.jpg
+assets/train2/Sad/sad1660.jpg
+assets/train2/Sad/sad726.jpg
+assets/train2/Sad/sad-354224.jpg
+assets/train2/Sad/sad2655.jpg
+assets/train2/Happy/happy-910049.jpg
+assets/train2/Happy/happy-979947.jpg
+assets/train2/Happy/happy-692853.jpg
+assets/train2/Neutral/neutral-186594.jpg
+assets/train2/Neutral/neutral-845732.jpg
+assets/train2/Neutral/neutral-543281.jpg
+assets/train2/Neutral/neutral-201850.jpg
+assets/train2/Neutral/neutral-472398.jpg
+assets/train2/Neutral/neutral-289159.jpg
+assets/train2/Neutral/neutral544.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
+assets/predict/Anger/Anger.jpg
+assets/predict/Sad/Sad copy 16.jpg
+assets/predict/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
+assets/train/Anger/Anger.jpg
+assets/train/Sad/Sad copy 16.jpg
+assets/train/Surprised/Surprised copy 18.jpg
