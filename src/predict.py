@@ -84,6 +84,8 @@ version = os.environ['v'] if 'v' in os.environ else (os.environ['version'] if 'v
 
 dataset_path = "assets/predict" if data == "0" else "assets/train" + data
 
+print(dataset_path)
+
 if model != "cnn":
     labels, images, landmarks_list = load_dataset(dataset_path)
     vectors = extract_features(landmarks_list)
@@ -97,7 +99,7 @@ if model != "cnn":
 
 if model == "cnn" or model == "":
     print(dataset_path)
-    
+
     labels, images, landmarks_list = load_dataset(
         dataset_path, 
         target_size=cnn_image_size, 
